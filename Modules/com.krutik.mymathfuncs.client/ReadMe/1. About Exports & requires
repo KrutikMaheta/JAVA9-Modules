@@ -1,0 +1,47 @@
+The preceding module-based example relies on the two foundational features of the
+module system: the ability to specify a dependence and the ability to satisfy that
+dependence.
+
+****
+
+Requires:
+
+These capabilities are specified through the use of the requires and
+exports statements within a module declaration.
+
+	requires moduleName;
+
+When more than one module is required, it must be specified in its own requires statement.
+
+****
+
+Exports:
+
+Here is the general form of the exports statement used in the example:
+
+	exports packageName;	
+	
+A module can export as many packages as needed, with each one specified in a separate exports statement. 
+Thus, a module may have several exports statements.
+
+*****
+
+When a module exports a package, it makes all of the public and protected types
+in the package accessible to other modules. Furthermore, the public and protected
+members of those types are also accessible.
+
+It is important to emphasize that requires and exports statements must occur
+only within a module statement. Furthermore, a module statement must occur by
+itself in a file called module-info.java.
+
+
+**** 
+Export...To... :
+
+In an exports statement, the to clause specifies a list of one or more modules that have access to the 
+exported package. Furthermore, only those modules named in the to clause will have access. In the language 
+of modules, the to clause creates what is known as a qualified export.
+
+The form of exports that includes to is shown here:
+	exports packageName to moduleNames;
+

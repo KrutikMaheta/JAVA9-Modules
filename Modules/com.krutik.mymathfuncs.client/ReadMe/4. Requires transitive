@@ -1,0 +1,14 @@
+Consider a situation in which there are three modules, A, B, and C, that have the following dependences:
+		A requires B
+		B requires C
+Given this situation, it is clear that since A depends on B and B depends on C, A has an indirect dependence on C.
+
+In such scenario you can create an implied dependence on C.  Implied dependence is also referred to as implied readability.
+
+To create an implied dependence, add the transitive keyword after requires in
+the clause that requires the module upon which an implied readability is needed.
+
+module B {
+	exports somepack;
+	requires transitive C;
+}

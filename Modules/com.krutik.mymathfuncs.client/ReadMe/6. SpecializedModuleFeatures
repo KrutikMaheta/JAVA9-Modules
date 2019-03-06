@@ -1,0 +1,43 @@
+Open Modules:
+
+When it is useful to enable run-time access to all packages in the module, whether a package is exported
+or not; to allow this, you can create an open module. An open module is declared by preceding the module 
+keyword with the open modifier, as shown here:
+
+	open module moduleName{
+		//Module Definition
+	}
+	
+The open modifier affects only run-time accessibility. The primary reason for an open module is to enable 
+the packages in the module to be accessed through reflection.
+
+*********************************************
+
+The opens Statement:
+
+It is possible for a module to open a specific package for run-time access by other
+modules and for reflective access rather than opening an entire module. To do so, use
+the opens statement, shown here:
+		
+		opens packageName;
+		
+It is also possible to include a to clause, which names those modules for which the package is opened.
+
+An opens statement cannot be used in an open module. Remember, all packages in an open module are 
+already open.	
+
+*********************************************
+
+requires static:
+
+requires specifies a dependence that, by default, is enforced both during compilation and at run time.
+It is possible to relax this requirement in such a way that a module is not required at run time.
+This is accomplished by use of the static modifier in a requires statement.
+
+For example, this specifies that mymod is required for compilation, but not at run time:
+
+	requires static mymod;
+	
+	In this case, the addition of static makes mymod optional at run time. This can be
+helpful in a situation in which a program can utilize functionality if it is present, but
+not require it.	

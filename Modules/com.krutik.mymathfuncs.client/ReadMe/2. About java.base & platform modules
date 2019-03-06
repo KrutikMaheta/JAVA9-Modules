@@ -1,0 +1,13 @@
+By modularizing the API, it becomes possible to
+deploy an application with only the packages that it requires, rather than the entire
+Java Runtime Environment (JRE). Because of the size of the full JRE, this is a very
+important improvement.
+
+Of the platform modules, the most important is java.base
+It includes and exports those packages fundamental to Java, such as java.lang, java.io, and java.util,
+among many others. 
+Because of its importance, java.base is automatically accessible to all modules.
+
+In much the same way that java.lang is automatically available to all programs without the use of an 
+import statement, the java.base module is automatically accessible to all module-based programs without 
+explicitly requesting it.

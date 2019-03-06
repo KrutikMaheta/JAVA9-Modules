@@ -1,0 +1,6 @@
+In a requires statement, if transitive is immediately followed by a separator (such as a
+semicolon), it is interpreted as an identifier (for example, as a module name) rather
+than a keyword.
+
+
+

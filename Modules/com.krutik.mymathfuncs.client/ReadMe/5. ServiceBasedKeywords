@@ -1,0 +1,20 @@
+Modules support services through the use of the keywords provides, uses, and with.
+
+a module specifies that it provides a service with a provides statement.
+A module indicates that it requires a service with a uses statement. 
+The specific type of service provider is declared by with. 
+
+When used together, they enable you to specify a module that provides a service, a module that needs 
+that service, and the specific implementation of that service.
+
+syntax:
+	provides serviceType with implementationTypes
+
+	serviceType specifies the type of the service, which is often an interface,
+	although abstract classes are also used. A comma-separated list of the
+	implementation types is specified by implementationTypes.
+
+syntax:	
+uses serviceType;
+	serviceType specifies the type of the service required.
+	

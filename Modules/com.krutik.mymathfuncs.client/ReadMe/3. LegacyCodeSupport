@@ -1,0 +1,18 @@
+Support for legacy code is provided by two key features.
+
+Unnamed Module:
+
+When you use code that is not part of a named module, it automatically becomes part of the unnamed module.
+The unnamed module has two important attributes:
+
+1. All of the packages in the unnamed module are automatically exported.
+2. The unnamed module can access any and all other modules.
+
+Thus, when a program does not use modules, all API modules in the Java platform are automatically accessible 
+through the unnamed module.
+
+The second key feature that supports legacy code is the automatic use of the class path, rather than the 
+module path. When you compile a program that does not use modules, the class path mechanism is employed, 
+just as it has been since Java’s original release. As a result, the program is compiled and run in the 
+same way it was prior to JDK 9.
+
